@@ -25,7 +25,7 @@ I think it'd be nice to set the following goals and keep track of progress someh
 
 Maybe we can use a numeric system (1-5) to indicate how well something is going 
 
-Here you can find the link [to the kanban board](https://github.com/nicholascorten1/webscraping/projects/1?add_cards_query=is%3Aopen)
+Here you can find the link [to the kanban board](https://github.com/nicholascorten1/webscraping/projects/1?add_cards_query=is%3Aopen). Let the names of the branches correspond to the tags in the issues (e.g., B1 for bot 1)
 
 So a general workflow is:
 1. Pick a ticket from the kanban board
