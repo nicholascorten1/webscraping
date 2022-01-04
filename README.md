@@ -17,6 +17,13 @@ I think it'd be nice to set the following goals and keep track of progress someh
 | Struggle with git (ideally we'd get many conflicts) |          |    |
 | Get comfortable with IDE                            |          |    |
 | Run a debugger                                      |          |    |
+| Refactoring                                         |          |    |
 | Write some unit tests                               |          |    |
 
 
+Maybe we can use a numeric system (1-5) to indicate how well something is going 
+
+So a general workflow is:
+1. Pick a ticket from the kanban board
+2. create a branch in git
+3. think and write down a plan for what you are doing in (git)
