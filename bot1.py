@@ -29,5 +29,10 @@ try:
         EC.presence_of_element_located((By.XPATH, "//a[@title='View cart']"))
     )
     element.click()
+
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.LINK_TEXT, "Proceed to checkout"))
+    )
+    element.click()
 except:
     driver.quit()
