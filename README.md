@@ -11,13 +11,13 @@ I think it'd be nice to set the following goals and keep track of progress someh
 
 | Goal                                                | Nicholas | Ho |
 |-----------------------------------------------------|----------|----|
-| python                                              |          |    |
-| Write a bot                                         |          |    |
-| Write documentation                                 |          |    |
+| python                                              |    2     |    |
+| Write a bot                                         |    2     |    |
+| Write documentation                                 |    1     |    |
 | Develop some "user flows" pertaining to segments    |          |    |
 | Manage a non-simple codebase                        |          |    |
-| Struggle with git (ideally we'd get many conflicts) |          |    |
-| Get comfortable with IDE                            |          |    |
+| Struggle with git (ideally we'd get many conflicts) |     2    |    |
+| Get comfortable with IDE                            |     3    |    |
 | Run a debugger                                      |          |    |
 | Refactoring                                         |          |    |
 | Write some unit tests                               |          |    |
