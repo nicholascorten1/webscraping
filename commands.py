@@ -7,6 +7,7 @@ from config import set_chrome_options
 import time
 import random
 import names
+from faker import Faker
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = set_chrome_options())
 
@@ -67,14 +68,21 @@ def fill_lastname():
     fill_last_name = driver.find_element_by_xpath('//*[@id="billing_last_name"]')
     fill_last_name.send_keys(last_name)
 
-#choose country from dropdown
+#picks country from dropdown list
 def pick_country():
     dropdown_arrow = driver.find_element_by_xpath('//*[@id="billing_country_field"]/span/span/span[1]/span/span[2]/b')
     dropdown_arrow.click()
     all_countries = driver.find_elements_by_tag_name("li")
     random_country = random.choice(all_countries)
     random_country.click()
-    
+
+#fills in a random address
+fake = Faker()
+address = fake.address().split('\n', 1)[0]
+def fill_address():
+    address_line = driver.find_element_by_xpath('//*[@id="billing_address_1"]')
+    address_line.send_keys(address)
+
 
 #ik wil graag deze functies in de bot.py plaatsen maar momenteel krijg ik error wnr ik ze daar run
 #daarom plaats ik ze tijdelijk hier, zodat ik de functies zelf kan testen
@@ -88,3 +96,4 @@ proceed_checkout()
 fill_firstname()
 fill_lastname()
 pick_country()
+fill_address()
