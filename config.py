@@ -5,7 +5,7 @@ def set_chrome_options() -> None:
     Chrome options for headless browser is enabled.
     """
     chrome_options = Options()
-    chrome_options.add_argument("--headless") ## disable this line if you don't want the browser to pop up 
+    #chrome_options.add_argument("--headless") ## disable this line if you do want the browser to pop up 
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_prefs = {}
