@@ -34,5 +34,22 @@ try:
         EC.presence_of_element_located((By.LINK_TEXT, "Proceed to checkout"))
     )
     element.click()
+
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//button[text()='Place order']"))
+    )
+    element.click()
+
+    """   
+        first = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//*[@id='billing_first_name']"))
+    )
+    first.send_keys("Sint")
+    time.sleep(9) 
+    """
 except:
     driver.quit()
+
+
+firstname = driver.find_element_by_xpath("//*[@id='billing_first_name']")
+firstname.send_keys("Sint")
