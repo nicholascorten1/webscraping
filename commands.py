@@ -37,8 +37,25 @@ def add_to_cart():
     add_cart = driver.find_element_by_name('add-to-cart')
     add_cart.click()
 
+#views cart
+def view_cart():
+    view_cart = driver.find_element_by_link_text('View cart')
+    view_cart.click()
+
+#pick random amount of this product
+def pick_amount():
+    random_amount = random.randint(1,7)
+    amount = driver.find_element_by_xpath('/html/body/div/div[2]/div/div[2]/main/article/div/div/form/table/tbody/tr[1]/td[5]/div/input')
+    amount.clear()
+    amount.send_keys(random_amount)
+    
+
+#ik wil graag deze functies in de bot.py plaatsen maar momenteel krijg ik error wnr ik ze daar run
+#daarom plaats ik ze tijdelijk hier, zodat ik de functies zelf kan testen
 open_website()
 open_shop()
 choose_beverages()
 pick_drink()
 add_to_cart()
+view_cart()
+pick_amount()
