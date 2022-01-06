@@ -32,8 +32,13 @@ def pick_drink():
     random_drink = random.choice(all_drinks)
     random_drink.click()
 
+#adds product to cart
+def add_to_cart():
+    add_cart = driver.find_element_by_name('add-to-cart')
+    add_cart.click()
 
 open_website()
 open_shop()
 choose_beverages()
 pick_drink()
+add_to_cart()
