@@ -8,7 +8,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from config import set_chrome_options
 from utils.set_user import set_user
-from commands import open_website, open_shop, choose_beverages, pick_drink, add_to_cart, view_cart, proceed_checkout, fill_firstname, fill_lastname, pick_country, fill_street_address, fill_city, fill_state, fill_postcode, fill_phonenumber, fill_email
+from commands import open_website, open_shop, choose_beverages, pick_drink, add_to_cart, view_cart, proceed_checkout, fill_firstname, fill_lastname, pick_country, fill_street_address, fill_city, fill_state, fill_postcode, fill_phonenumber, fill_email, place_order
 
 
 
@@ -40,7 +40,10 @@ def main():
     fill_postcode()
     fill_phonenumber()
     fill_email() 
-    
+    fill_phonenumber()
+    fill_email()
+    place_order()
+    time.sleep(10)
    
 
 

@@ -3,6 +3,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from config import set_chrome_options
 import time
 import random
@@ -72,9 +73,9 @@ def fill_lastname():
 def pick_country():
     dropdown_arrow = driver.find_element_by_xpath('//*[@id="billing_country_field"]/span/span/span[1]/span/span[2]/b')
     dropdown_arrow.click()
-    all_countries = driver.find_elements_by_tag_name("li")
-    random_country = random.choice(all_countries)
-    random_country.click()
+    all_countries = driver.find_element_by_xpath('/html/body/span/span/span[1]/input')
+    all_countries.send_keys("United States", Keys.RETURN)
+  
 
 #generates random billing details for the checkout
 fake = Faker()
@@ -95,10 +96,13 @@ def fill_city():
     address_city = driver.find_element_by_xpath('//*[@id="billing_city"]')
     address_city.send_keys(city)
 
-#fills in the random state generated above
-def fill_state():
-    address_state = driver.find_element_by_xpath('//*[@id="billing_state"]')
-    address_state.send_keys(state)
+#picks random state
+def pick_state():
+    dropdown_arrow = driver.find_element_by_xpath('//*[@id="billing_state_field"]/span/span/span[1]/span/span[2]/b')
+    dropdown_arrow.click()
+    all_states = driver.find_elements_by_tag_name("li")
+    random_state = random.choice(all_states)
+    random_state.click()
 
 #fills in the random postal code generated above
 def fill_postcode():
@@ -112,8 +116,13 @@ def fill_phonenumber():
 
 #fills in the random email address from first name & last name
 def fill_email():
-    phone_number = driver.find_element_by_xpath('///*[@id="billing_email"]')
+    phone_number = driver.find_element_by_xpath('//*[@id="billing_email"]')
     phone_number.send_keys(first_name + last_name + "@gmail.com")
+
+#places the order
+def place_order():
+    order = driver.find_element_by_xpath('//*[@id="place_order"]')
+    order.click()
 
 
 
@@ -131,7 +140,8 @@ fill_lastname()
 pick_country()
 fill_street_address()
 fill_city()
-fill_state()
+pick_state()
 fill_postcode()
 fill_phonenumber()
 fill_email()
+place_order()
