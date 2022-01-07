@@ -13,8 +13,11 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options = set_chrome_
 
 base_url = "https://shop.datasight.app"
 
-#opens the website
+
 def open_website():
+    """[summary]
+    Opens website 
+    """
     driver.get(base_url)
 
 #goes to the shop inside website
