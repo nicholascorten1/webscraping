@@ -30,12 +30,11 @@ phone = fake.msisdn()
 
 
 def buy_item():
-
 #opens the website
     driver.get(base_url)
 
 #maximises the chrome window
-    #driver.maximize_window()
+    driver.maximize_window()
 
 #goes to the shop inside website
     shop = driver.find_element_by_link_text("Shop")
@@ -47,21 +46,15 @@ def buy_item():
     random_category = random.choice(all_categories)
     random_category.click()
 
-#picks random drink insde the beverages category
-    drinks = driver.find_element_by_xpath('//*[@id="main"]')
-    all_drinks = drinks.find_elements_by_tag_name("li")
-    random_drink = random.choice(all_drinks)
-    random_drink.click()
+#picks item inside the chosen category
+    items = driver.find_element_by_xpath('//*[@id="main"]')
+    all_items = items.find_elements_by_tag_name("li")
+    random_item = random.choice(all_items)
+    random_item.click()
     
 #adds product to cart
     add_cart = driver.find_element_by_name('add-to-cart')
     add_cart.click()
-
-#pick random amount of this product
-    random_amount = random.randint(1,7)
-    amount = driver.find_element_by_xpath('//*[@id="quantity_61d71827d036c"]')
-    amount.clear()
-    amount.send_keys(random_amount)
 
 #views cart
     view_cart = driver.find_element_by_link_text('View cart')
@@ -117,23 +110,8 @@ def buy_item():
     order.click()
 
 
+buy_item()
 
-#ik wil graag deze functies in de bot.py plaatsen maar momenteel krijg ik error wnr ik ze daar run
-#daarom plaats ik ze tijdelijk hier, zodat ik de functies zelf kan testen
-""" open_website()
-open_shop()
-choose_category()
-pick_drink()
-add_to_cart()
-view_cart()
-proceed_checkout()
-fill_firstname()
-fill_lastname()
-pick_country()
-fill_street_address()
-fill_city()
-pick_state()
-fill_postcode()
-fill_phonenumber()
-fill_email()
-place_order() """
+
+
+

@@ -128,7 +128,7 @@ def place_order():
 
 #ik wil graag deze functies in de bot.py plaatsen maar momenteel krijg ik error wnr ik ze daar run
 #daarom plaats ik ze tijdelijk hier, zodat ik de functies zelf kan testen
-""" open_website()
+open_website()
 open_shop()
 choose_beverages()
 pick_drink()
@@ -144,4 +144,4 @@ pick_state()
 fill_postcode()
 fill_phonenumber()
 fill_email()
-place_order() """
+place_order()
