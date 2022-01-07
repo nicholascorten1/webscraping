@@ -76,12 +76,45 @@ def pick_country():
     random_country = random.choice(all_countries)
     random_country.click()
 
-#fills in a random address
+#generates random billing details for the checkout
 fake = Faker()
-address = fake.address().split('\n', 1)[0]
-def fill_address():
-    address_line = driver.find_element_by_xpath('//*[@id="billing_address_1"]')
-    address_line.send_keys(address)
+street = fake.street_address()
+city = fake.city()
+state = fake.street_suffix()
+postcode = fake.postcode()
+countrycode = fake.country_calling_code()
+phone = fake.msisdn()
+
+#fills in the random street address generated above
+def fill_street_address():
+    address_street = driver.find_element_by_xpath('//*[@id="billing_address_1"]')
+    address_street.send_keys(street)
+
+#fills in the random city generated above
+def fill_city():
+    address_city = driver.find_element_by_xpath('//*[@id="billing_city"]')
+    address_city.send_keys(city)
+
+#fills in the random state generated above
+def fill_state():
+    address_state = driver.find_element_by_xpath('//*[@id="billing_state"]')
+    address_state.send_keys(state)
+
+#fills in the random postal code generated above
+def fill_postcode():
+    postal_code = driver.find_element_by_xpath('//*[@id="billing_postcode"]')
+    postal_code.send_keys(postcode)
+
+#fills in the random phone number generated above
+def fill_phonenumber():
+    phone_number = driver.find_element_by_xpath('//*[@id="billing_phone"]')
+    phone_number.send_keys(countrycode + phone)
+
+#fills in the random email address from first name & last name
+def fill_email():
+    phone_number = driver.find_element_by_xpath('///*[@id="billing_email"]')
+    phone_number.send_keys(first_name + last_name + "@gmail.com")
+
 
 
 #ik wil graag deze functies in de bot.py plaatsen maar momenteel krijg ik error wnr ik ze daar run
@@ -96,4 +129,9 @@ proceed_checkout()
 fill_firstname()
 fill_lastname()
 pick_country()
-fill_address()
+fill_street_address()
+fill_city()
+fill_state()
+fill_postcode()
+fill_phonenumber()
+fill_email()
