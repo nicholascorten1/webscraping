@@ -7,7 +7,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 from config import set_chrome_options
-from uninvolved_shoppers import uninvolved_userflow
+from segments import single_shopper_bevahiour, window_shopper_behaviour, researcher_behaviour, loyal_customer_behaviour
 from utils.set_user import set_user
 
 
@@ -24,14 +24,18 @@ def main():
         'name': '_ga',
         'value': user
     })
-
-    uninvolved_userflow()
     
+    if segment == "single_shopper"
+        single_shopper_bevahiour(driver)
 
-   
-
-
-
+    if segment == "window_shopper"
+        window_shopper_bevahiour(driver)
+    
+    if segment == "researcher"
+        researcher_bevahiour(driver)
+    
+    if segment == "loyal_customer"
+        loyal_customer_behaviour(driver)
 
 
 if __name__ == "__main__":
