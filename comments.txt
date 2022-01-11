@@ -1,0 +1,23 @@
+Ik zou 1 functie hebben waar je alles doet: 
+
+
+
+def single_shopper_behaviour(driver):
+    
+    hier onder elkaar de events uit commands.py 
+
+
+todos: 
+* definieer zoals bijvoorbeeld hierboven een serie aan events in een functie voor ieder segment
+* dit roep je aan in main()
+* def single_shopper_behaviour kan in een ander .py bestand en kan je hier aanroepen. 
+
+def main():
+    ...
+
+    if segment == "single_shopper"
+        single_shopper_bevahiour(driver)
+    ... 
+    
+...
+

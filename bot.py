@@ -7,8 +7,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 from config import set_chrome_options
+from uninvolved_shoppers import uninvolved_userflow
 from utils.set_user import set_user
-from commands import buy_item
 
 
 
@@ -24,7 +24,10 @@ def main():
         'name': '_ga',
         'value': user
     })
-    buy_item()
+
+    uninvolved_userflow()
+    
+
    
 
 
