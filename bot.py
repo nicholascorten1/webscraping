@@ -25,13 +25,10 @@ def main():
         'value': user
     })
     buy_item()
-    
-    time.sleep(10)
    
 
 
 
-    driver.close()
 
 
 if __name__ == "__main__":

@@ -40,7 +40,7 @@ def buy_item():
     shop = driver.find_element_by_link_text("Shop")
     shop.click()
 
-#goes to the beverages catergory inside the shop
+#picks a category inside the shop
     categories = driver.find_element_by_xpath('//*[@id="main"]')
     all_categories = categories.find_elements_by_tag_name("li")
     random_category = random.choice(all_categories)
@@ -109,8 +109,9 @@ def buy_item():
     order = driver.find_element_by_xpath('//*[@id="place_order"]')
     order.click()
 
-
-buy_item()
+#close the tab
+    time.sleep(5)
+    driver.close()
 
 
 
