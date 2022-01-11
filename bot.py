@@ -9,9 +9,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from config import set_chrome_options
 from utils.set_user import set_user
 from commands import buy_item
+from uninvolved_shoppers import uninvolved_userflow
 
 
 
+base_url = "https://shop.datasight.app"
 
 
 def main(): 
@@ -24,10 +26,8 @@ def main():
         'name': '_ga',
         'value': user
     })
-    buy_item()
-    
-    time.sleep(10)
-   
+
+    uninvolved_userflow()
 
 
 
