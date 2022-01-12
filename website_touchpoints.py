@@ -86,27 +86,26 @@ def fill_billing_details():
     dropdown_arrow = driver.find_element_by_xpath('//*[@id="billing_country_field"]/span/span/span[1]/span/span[2]/b')
     dropdown_arrow.click()
     all_countries = driver.find_element_by_xpath('/html/body/span/span/span[1]/input')
-    all_countries.send_keys("United States", Keys.RETURN)
+    all_countries.send_keys("Netherlands", Keys.RETURN)
   
-
 #fills in the random street address generated above
     address_street = driver.find_element_by_xpath('//*[@id="billing_address_1"]')
     address_street.send_keys(street)
+
+#fills in the random postal code generated above
+    postal_code = driver.find_element_by_xpath('//*[@id="billing_postcode"]')
+    postal_code.send_keys(postcode)
 
 #fills in the random city generated above
     address_city = driver.find_element_by_xpath('//*[@id="billing_city"]')
     address_city.send_keys(city)
 
 #picks random state
-    dropdown_arrow = driver.find_element_by_xpath('//*[@id="billing_state_field"]/span/span/span[1]/span/span[2]/b')
+    '''dropdown_arrow = driver.find_element_by_xpath('//*[@id="billing_state_field"]/span/span/span[1]/span/span[2]/b')
     dropdown_arrow.click()
     all_states = driver.find_elements_by_tag_name("li")
     random_state = random.choice(all_states)
-    random_state.click()
-
-#fills in the random postal code generated above
-    postal_code = driver.find_element_by_xpath('//*[@id="billing_postcode"]')
-    postal_code.send_keys(postcode)
+    random_state.click()'''
 
 #fills in the random phone number generated above
     phone_number = driver.find_element_by_xpath('//*[@id="billing_phone"]')
