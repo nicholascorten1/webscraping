@@ -3,14 +3,12 @@ from website_touchpoints import *
 
 #single page visitor website journey
 def single_shopper_bevahiour():
-    open_website()
     open_shop()
     close_website()
   
 
 #window shopper website journey
 def window_shopper_behaviour():
-    open_website()
     open_shop()
     pick_category()
     pick_item()
@@ -21,7 +19,6 @@ def window_shopper_behaviour():
 
 #researcher website journey
 def researcher_behaviour():
-    open_website()
     open_shop()
     pick_category()
     pick_item()
@@ -36,7 +33,6 @@ def researcher_behaviour():
 
 #loyal customers website journey
 def loyal_customer_behaviour():
-    open_website()
     open_shop()
     pick_category()
     pick_item()

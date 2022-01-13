@@ -6,10 +6,6 @@ import random
 import names
 from faker import Faker
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options = set_chrome_options())
-
-base_url = "https://shop.datasight.app"
-
 #generates random names
 first_name = names.get_first_name()
 last_name = names.get_last_name()
@@ -24,57 +20,55 @@ countrycode = fake.country_calling_code()
 phone = fake.msisdn()
 
 
-#opens the website
-def open_website():
-    driver.get(base_url)
+
 
 #close the website
-def close_website():
+def close_website(driver):
     driver.quit()
 
 #goes to the shop inside website
-def open_shop():
+def open_shop(driver):
     shop = driver.find_element_by_link_text("Shop")
     shop.click()
 
 #picks a category inside the shop
-def pick_category():
+def pick_category(driver):
     categories = driver.find_element_by_xpath('//*[@id="main"]')
     all_categories = categories.find_elements_by_tag_name("li")
     random_category = random.choice(all_categories)
     random_category.click()
 
 #picks item inside the chosen category
-def pick_item():
+def pick_item(driver):
     items = driver.find_element_by_xpath('//*[@id="main"]')
     all_items = items.find_elements_by_tag_name("li")
     random_item = random.choice(all_items)
     random_item.click()
     
 #adds product to cart
-def add_to_cart():
+def add_to_cart(driver):
     add_cart = driver.find_element_by_name('add-to-cart')
     add_cart.click()
 
 #pick random amount of this product
-def pick_amount():
+def pick_amount(driver):
     random_amount = random.randint(1,7)
     amount = driver.find_element_by_xpath('//*[@id="quantity_61d71827d036c"]')
     amount.clear()
     amount.send_keys(random_amount)
 
 #views cart
-def view_cart():
+def view_cart(driver):
     view_cart = driver.find_element_by_link_text('View cart')
     view_cart.click()
     
 #proceeds to checkout
-def proceed_checkout():
+def proceed_checkout(driver):
     checkout = driver.find_element_by_link_text('Proceed to checkout')
     checkout.click()
 
 #fill in billing details
-def fill_billing_details():
+def fill_billing_details(driver):
     fill_name = driver.find_element_by_xpath('//*[@id="billing_first_name"]')
     fill_name.send_keys(first_name)
 
@@ -116,6 +110,6 @@ def fill_billing_details():
     phone_number.send_keys(first_name + last_name + "@gmail.com")
 
 #places the order
-def place_order():
+def place_order(driver):
     order = driver.find_element_by_xpath('//*[@id="place_order"]')
     order.click()
