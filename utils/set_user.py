@@ -14,6 +14,6 @@ def set_user() -> str:
 
     right_part = random.randint(1e9, 1e10-1)
     user = f"{left_part}.{right_part}"
-    
+    print('user--', user)
     return 'GA1.1.' + user
     
