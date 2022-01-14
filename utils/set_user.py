@@ -17,3 +17,4 @@ def set_user() -> str:
     print('user--', user)
     return 'GA1.1.' + user
     
+set_user()
