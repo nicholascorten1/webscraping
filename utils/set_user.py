@@ -1,6 +1,7 @@
 from segments import *
 import random
 random.seed(1)
+from bot import amount_users
 
 def set_user() -> str:
     """[summary]
@@ -26,11 +27,10 @@ def set_user() -> str:
 
 
 """
-List_of_users is a fixed list with a length chosen in amount_of_users
+List_of_users is a fixed list with a length chosen in amount_of_users (defined in bot.py)
 the list consists of the cookies that were previously created
 """
 list_of_users = []
-amount_users = 10
 
 for i in range(amount_users):
     ga_id = set_user()
