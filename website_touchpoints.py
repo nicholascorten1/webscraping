@@ -1,7 +1,4 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
-from config import set_chrome_options
 import random
 import names
 from faker import Faker
@@ -47,7 +44,7 @@ def pick_item(driver):
     
 #adds product to cart
 def add_to_cart(driver):
-    add_cart = driver.find_element_by_name('add-to-cart')
+    add_cart = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/main/div[2]/div[2]/form/button')
     add_cart.click()
 
 #pick random amount of this product
@@ -59,7 +56,7 @@ def pick_amount(driver):
 
 #views cart
 def view_cart(driver):
-    view_cart = driver.find_element_by_link_text('View cart')
+    view_cart = driver.find_element_by_link_text("View cart")
     view_cart.click()
     
 #proceeds to checkout
