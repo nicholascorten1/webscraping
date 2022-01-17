@@ -1,11 +1,8 @@
 from bot import amount_users
 from segments import *
-from set_user import create_user
+from utils.set_user import create_user
 
 
-"""
-
-"""
 def defined_user(amount_users):
     """
     list_of_users is a fixed list with a length chosen in amount_of_users (defined in bot.py)

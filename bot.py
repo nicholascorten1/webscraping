@@ -8,10 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from config import set_chrome_options
 from utils.set_user import set_user
 import time
+from define_user import defined_user
 
 base_url = "https://shop.datasight.app"
-
-
 
 
 def main(): 
@@ -27,7 +26,7 @@ def main():
     'name': '_ga',
     'value': user
     })
-    time.sleep(100)
+    defined_user(5)
         
 
 
