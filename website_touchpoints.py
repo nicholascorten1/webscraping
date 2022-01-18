@@ -44,7 +44,7 @@ def pick_item(driver):
     
 #adds product to cart
 def add_to_cart(driver):
-    add_cart = driver.find_element_by_css_selector('//*[@name="add-to-cart"]/div[*]/form/button')
+    add_cart = driver.find_element_by_name('add-to-cart')
     add_cart.click()
 
 #pick random amount of this product

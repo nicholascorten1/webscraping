@@ -11,7 +11,7 @@ from segments import *
 
 base_url = "https://shop.datasight.app"
 
-amount_users = 50
+amount_users = 20
     
 def main(): 
     for i in range(amount_users):

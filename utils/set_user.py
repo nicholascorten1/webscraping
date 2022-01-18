@@ -1,5 +1,4 @@
 import random
-random.seed(2)
 
 
 def create_user() -> str:
